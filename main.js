@@ -26,7 +26,7 @@ window.onload = function () {
       });
     },
     updated: function () {
-      this.maxScroll = 50 / window.scrollMaxY;
+      this.maxScroll = 50 / (window.scrollMaxY || document.documentElement.scrollHeight - document.documentElement.clientHeight);
     }
   })
 }
