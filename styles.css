@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Kalam:700|Lilita+One&display=swap');
+
+@font-face {
+  font-family: "New York";
+  src: url("fonts/NewYorkMedium-Regular.otf") format("opentype");
+}
+
+
+body {
+  background-color: hsl(185, 93%, 51%);
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  height: 90%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.signature{
+  font-family: 'Kalam', cursive;
+}
+
+a {
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: none;
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: .9;
+  }
+
+  100% {
+    opacity: .9;
+  }
+}
+
+.flicker {
+  -webkit-animation: text-flicker 3s linear infinite;
+  animation: text-flicker 3s linear infinite;
+}
+
+#header {
+  height: 20%;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  z-index: 99;
+  background-color: red;
+  color: white;
+  border-radius: 27px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  height: 56px;
+}
+
+@media only screen and (max-width: 800px) {
+  .back-button {
+    width: 56px;
+  }
+
+  .back-button span {
+    border-radius: 50%;
+    display: none;
+  }
+}
+
+
+/* HOME */
+
+#home {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 7%;
+}
+
+#home button {
+  color: #212121;
+  background-color: white;
+  border-radius: 8px;
+  width: 37em;
+  margin: 2%;
+  padding: 2% 0;
+}
+
+.button-title {
+  width: 100%;
+  font-family: 'Lilita One', cursive;
+  font-size: 10em;
+}
+
+#home button div:not(.button-title) {
+  width: 100%;
+  font-size: 5em;
+  font-family: 'Kalam', cursive;
+  color: #b3e5fc;
+}
+
+@media only screen and (max-width: 800px) {
+  #home button {
+    width: 80vw;
+  }
+
+  .button-title {
+    font-size: 8em;
+  }
+
+  #home button div:not(.button-title) {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .button-title {
+    font-size: 6em;
+  }
+
+  #home button div:not(.button-title) {
+    font-size: 2em;
+  }
+}
+
+
+/* WHO */
+
+.card-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-container {
+    width: 100%;
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  margin-top: 2%;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    flex-direction: column;
+  }
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  height: 100%;
+  align-self: center;
+  text-align: center;
+  padding: 5% 0;
+}
+
+@media only screen and (min-width: 800px) {
+  .card:nth-child(even) .card-title {
+    order: 2;
+  }
+
+  .card-title {
+    width: 35%;
+  }
+}
+
+.paragraph {
+  font-family: 'New York', sans-serif;
+  line-height: 1.5em;
+  width: 35%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+@media only screen and (max-width: 800px) {
+  .paragraph {
+    width: 90%;
+    align-self: center;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul ul {
+  padding: 5%;
+}
+
+#contacts .paragraph ul li i {
+  font-size: 1.5em;
+  margin: 0.4em;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+#likeathome>div {
+  display: none;
+}
+
+#likeathome {
+  text-decoration: underline;
+}
+
+#likeathome:hover>div {
+  display: block;
+  position: absolute;
+  width: 40%;
+  height: auto;
+  z-index: 999;
+}
+
+#likeathome>div>img {
+  width: 100%;
+}
+
+#download-cv .paragraph a {
+  font-size: 10em;
+}
+
+@media only screen and (max-width: 800px) {
+  #download-cv .paragraph {
+    text-align: center;
+  }
+
+  #download-cv .paragraph a {
+    font-size: 5em;
+  }
+}
+
+
+/* WHAT */
+
+.github {
+  width: 20%;
+  margin-left: 35%;
+}
+
+
+footer {
+  height: 10vh;
+}
