@@ -16,29 +16,36 @@
   <div id="app">
 
     <div id="header">
-      <h1 v-if="page === 'home'">
-        Another <span class="flicker">&nbsp;Boring&nbsp;</span> Home <br>
-        <span class="signature">by Leonardo Bellettini</span>
-      </h1>
-      <h1 v-else-if="page === 'who'">
-        Another <span class="flicker">&nbsp;Boring&nbsp;</span> Resume <br>
-        <span class="signature">by Leonardo Bellettini</span>
-        <button v-on:click="page = 'home'" class="back-button" title="Back to home">
-          <i class="fas fa-backward"></i>
-          <span>&nbsp;Back</span>
-        </button> 
-      </h1>
-      <h1 v-else-if="page === 'what'">
-        Another <span class="flicker">&nbsp;Boring&nbsp;</span> Projects Page <br>
-        <span class="signature">by Leonardo Bellettini</span>
-        <button v-on:click="page = 'home'" class="back-button" title="Back to home">
-          <i class="fas fa-backward"></i>
-          <span>&nbsp;Back</span>
-        </button> 
-      </h1>
+      <template v-if="page === 'home'">
+        <h1>
+          Another <span class="flicker">&nbsp;Boring&nbsp;</span> Home <br>
+          <span class="signature">by Leonardo Bellettini</span>
+        </h1>
+      </template>
+      <template v-else-if="page === 'who'">
+        <h1>
+          Another <span class="flicker">&nbsp;Boring&nbsp;</span> Resume <br>
+          <span class="signature">by Leonardo Bellettini</span>
+          <button v-on:click="page = 'home'" class="back-button" title="Back to home">
+            <i class="fas fa-backward"></i>
+            <span>&nbsp;Back</span>
+          </button> 
+        </h1>
+      </template>
+      <template v-else-if="page === 'what'">
+        <h1>
+          Another <span class="flicker">&nbsp;Boring&nbsp;</span> Projects Page <br>
+          <span class="signature">by Leonardo Bellettini</span>
+          <button v-on:click="page = 'home'" class="back-button" title="Back to home">
+            <i class="fas fa-backward"></i>
+            <span>&nbsp;Back</span>
+          </button> 
+        </h1>
+      </template>
     </div>
 
-    <div id="home" v-if="page === 'home'">
+    <template v-if="page === 'home'">
+    <div id="home">
       <button v-on:click="page = 'who'">
         <div class="button-title">WHO</div>
         <div>About me</div>
@@ -48,243 +55,248 @@
         <div>My projects</div>
       </button>
     </div>
+    </template>
 
-    <div v-else-if="page === 'who'">
-      <div class="card-container">
-        <div class="card" id="contacts">
-          <div class="card-title">
-            Contacts
+    <template v-else-if="page === 'who'">
+      <div>
+        <div class="card-container">
+          <div class="card" id="contacts">
+            <div class="card-title">
+              Contacts
+            </div>
+            <div class="paragraph">
+              <ul>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:leonardo.bellettini@gmail.com">Email me</a>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" style="margin-left: 0.5em; margin-right: 0.5em;"></i>
+                  <a href="https://en.wikipedia.org/wiki/Rimini">Rimini, Italy</a>
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+393923217933">Call Me</a>
+                </li>
+                <li>
+                  <i class="fab fa-github"></i>
+                  <a href="https://www.github.com/leobel96">leobel96</a>
+                </li>
+                <li>
+                  <i class="fab fa-linkedin"></i>
+                  <a href="https://www.linkedin.com/in/leonardo-bellettini/">Leonardo Bellettini</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="paragraph">
-            <ul>
-              <li>
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:leonardo.bellettini@gmail.com">Email me</a>
-              </li>
-              <li>
-                <i class="fas fa-map-marker-alt" style="margin-left: 0.5em; margin-right: 0.5em;"></i>
-                <a href="https://en.wikipedia.org/wiki/Rimini">Rimini, Italy</a>
-              </li>
-              <li>
-                <i class="fas fa-phone"></i>
-                <a href="tel:+393923217933">Call Me</a>
-              </li>
-              <li>
-                <i class="fab fa-github"></i>
-                <a href="https://www.github.com/leobel96">leobel96</a>
-              </li>
-              <li>
-                <i class="fab fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/leonardo-bellettini/">Leonardo Bellettini</a>
-              </li>
-            </ul>
+          <div class="card" id="about-me">
+            <div class="card-title">
+              About Me
+            </div>
+            <div class="paragraph">
+              I am an enthusiast Electronic Engineering student.
+              I love coding, graphics and DIY. I am very curious
+              and I am always ready to learn something new. I am a fan
+              of OpenSource and I am happy to help other people with my passion.
+            </div>
           </div>
-        </div>
-        <div class="card" id="about-me">
-          <div class="card-title">
-            About Me
+          <div class="card" id="skills">
+            <div class="card-title">
+              Skills
+            </div>
+            <div class="paragraph">
+              <ul>
+                <li>PROGRAMMING LANGUAGES/CODE:
+                  <ul>
+                    <li>
+                      C, C++, VHDL, Python, Matlab, Javascript, HTML, CSS
+                    </li>
+                  </ul>
+                </li>
+                <li>PROGRAMS/SOFTWARE/TOOLS:
+                  <ul>
+                    <li>
+                      Intel Quartus, Mentor Modelsim, Synopsys DC,
+                      Cadence Virtuoso, Spice, Github, Office, Latex,
+                      Autodesk Fusion 360, Adobe Photoshop, Adobe Illustrator,
+                      SQL, Fusion 360
+                    </li>
+                  </ul>
+                </li>
+                <li>OPERATING SYSTEMS:
+                  <ul>
+                    <li>
+                      Microsoft Windows, Linux (in particular Debian and Arch based)
+                    </li>
+                  </ul>
+                </li>
+                <li>SOFT SKILLS:
+                  <ul>
+                    <li>
+                      Teamworking, Communication
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="paragraph">
-            I am an enthusiast Electronic Engineering student.
-            I love coding, graphics and DIY. I am very curious
-            and I am always ready to learn something new. I am a fan
-            of OpenSource and I am happy to help other people with my passion.
+          <div class="card" id="languages">
+            <div class="card-title">
+              Spoken Languages
+            </div>
+            <div class="paragraph">
+              <ul>
+                <li>Italian (Native language)</li>
+                <li>English (Cambridge Assessment First (FCE))</li>
+                <li>French (A2, learned at High School)</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="card" id="skills">
-          <div class="card-title">
-            Skills
+          <div class="card" id="prof-experiences">
+            <div class="card-title">
+              Professional Experiences
+            </div>
+            <div class="paragraph">
+              <ul>
+                <li>2018
+                  <ul>
+                    <li>
+                      Internship as Firmware Developer at
+                      Beeing, Cesena, Italy
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="paragraph">
-            <ul>
-              <li>PROGRAMMING LANGUAGES/CODE:
-                <ul>
-                  <li>
-                    C, C++, VHDL, Python, Matlab, Javascript, HTML, CSS
-                  </li>
-                </ul>
-              </li>
-              <li>PROGRAMS/SOFTWARE/TOOLS:
-                <ul>
-                  <li>
-                    Intel Quartus, Mentor Modelsim, Synopsys DC,
-                    Cadence Virtuoso, Spice, Github, Office, Latex,
-                    Autodesk Fusion 360, Adobe Photoshop, Adobe Illustrator,
-                    SQL, Fusion 360
-                  </li>
-                </ul>
-              </li>
-              <li>OPERATING SYSTEMS:
-                <ul>
-                  <li>
-                    Microsoft Windows, Linux (in particular Debian and Arch based)
-                  </li>
-                </ul>
-              </li>
-              <li>SOFT SKILLS:
-                <ul>
-                  <li>
-                    Teamworking, Communication
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          <div class="card" id="education">
+            <div class="card-title">
+              Education
+            </div>
+            <div class="paragraph">
+              <ul>
+                <li>2015 - 2018
+                  <ul>
+                    <li>
+                      Bachelor’s degree in Biomedical Engineering at University of Bologna.
+                      Thesis on Iot and Semantic Web
+                    </li>
+                  </ul>
+                </li>
+                <li>2018 - 2020
+                  <ul>
+                    <li>
+                      Master’s Degree in Electronic Engineering
+                      at Politecnico di Torino
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="card" id="languages">
-          <div class="card-title">
-            Spoken Languages
+          <div class="card" id="awards">
+            <div class="card-title">
+              Awards
+            </div>
+            <div class="paragraph">
+              <ul>
+                <li>04/2019
+                  <ul>
+                    <li>
+                      <a id="likeathome">First place <div><img src="img/likeathome.jpg"/></div></a>
+                      at hackathon "Like@Home" organized by IEEE-Eta Kappa Nu 
+                      association at Politecnico di Torino
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="paragraph">
-            <ul>
-              <li>Italian (Native language)</li>
-              <li>English (Cambridge Assessment First (FCE))</li>
-              <li>French (A2, learned at High School)</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card" id="prof-experiences">
-          <div class="card-title">
-            Professional Experiences
-          </div>
-          <div class="paragraph">
-            <ul>
-              <li>2018
-                <ul>
-                  <li>
-                    Internship as Firmware Developer at
-                    Beeing, Cesena, Italy
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="card" id="education">
-          <div class="card-title">
-            Education
-          </div>
-          <div class="paragraph">
-            <ul>
-              <li>2015 - 2018
-                <ul>
-                  <li>
-                    Bachelor’s degree in Biomedical Engineering at University of Bologna.
-                    Thesis on Iot and Semantic Web
-                  </li>
-                </ul>
-              </li>
-              <li>2018 - 2020
-                <ul>
-                  <li>
-                    Master’s Degree in Electronic Engineering
-                    at Politecnico di Torino
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="card" id="awards">
-          <div class="card-title">
-            Awards
-          </div>
-          <div class="paragraph">
-            <ul>
-              <li>04/2019
-                <ul>
-                  <li>
-                    <a id="likeathome">First place <div><img src="img/likeathome.jpg"/></div></a>
-                    at hackathon "Like@Home" organized by IEEE-Eta Kappa Nu 
-                    association at Politecnico di Torino
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="card" id="download-cv">
-          <div class="card-title">
-            Download my CV
-          </div>
-          <div class="paragraph">
-            <a href="https://drive.google.com/file/d/1f5SJvCl_mgjpV6ehquioWhDalk1V6a7Z/view?usp=sharing" target="_blank">
-              <i class="fas fa-file-download"></i>
-            </a>
+          <div class="card" id="download-cv">
+            <div class="card-title">
+              Download my CV
+            </div>
+            <div class="paragraph">
+              <a href="https://drive.google.com/file/d/1f5SJvCl_mgjpV6ehquioWhDalk1V6a7Z/view?usp=sharing" target="_blank">
+                <i class="fas fa-file-download"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </template>
 
-    <div v-if="page === 'what'">
-      <div class="card-container">
-        <div class="card">
-          <div class="card-title">
-            Butterfly - FFT
+    <template v-if="page === 'what'">
+      <div>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-title">
+              Butterfly - FFT
+            </div>
+            <div class="paragraph">
+              Group project for the exam "Sistemi Digitali Integrati":
+              Hardware implementation of the butterfly part of a FFT algorithm.
+              Following given specifications of timing, resources and optimisation.
+              Tools used for project and test: ModelSim Altera 10.1d, Intel Quartus
+              II 13.0, VHDL, Matlab, Excel.
+            </div>
           </div>
-          <div class="paragraph">
-            Group project for the exam "Sistemi Digitali Integrati":
-            Hardware implementation of the butterfly part of a FFT algorithm.
-            Following given specifications of timing, resources and optimisation.
-            Tools used for project and test: ModelSim Altera 10.1d, Intel Quartus
-            II 13.0, VHDL, Matlab, Excel.
+          <div class="card">
+            <div class="card-title">
+              Human Reflexes measurement device on FPGA
+            </div>
+            <div class="paragraph">
+              Group project for the exam "Sistemi Digitali Integrati":
+              Hardware implementation on FPGA of a human reflex measurement tool.
+              Tools used for project and test: ModelSim Altera 10.1d,
+              Intel Quartus II 13.0, VHDL, Matlab. <br>
+              <a href="http://github.com/leobel96/Polito-SDI-reflexesAnalyzer">
+                <img class="github" src="img/GitHub_Logo.png" alt="Github">
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-title">
-            Human Reflexes measurement device on FPGA
+          <div class="card">
+            <div class="card-title">
+              Neural network node
+            </div>
+            <div class="paragraph">
+              Group project for the exam "Elettronica dei Sistemi Digitali":
+              Hardware implementation of a neural network node.
+              Tools used for project and test: ModelSim Altera 10.1d,
+              Intel Quartus II 13.0, VHDL, Matlab, Excel. <br>
+              <a href="http://github.com/leobel96/Polito-ESD-NeuralNetwork">
+                <img class="github" src="img/GitHub_Logo.png" alt="Github">
+              </a>
+            </div>
           </div>
-          <div class="paragraph">
-            Group project for the exam "Sistemi Digitali Integrati":
-            Hardware implementation on FPGA of a human reflex measurement tool.
-            Tools used for project and test: ModelSim Altera 10.1d,
-            Intel Quartus II 13.0, VHDL, Matlab. <br>
-            <a href="http://github.com/leobel96/Polito-SDI-reflexesAnalyzer">
-              <img class="github" src="img/GitHub_Logo.png" alt="Github">
-            </a>
+          <div class="card">
+            <div class="card-title">
+              LambdaBooth
+            </div>
+            <div class="paragraph">
+              A software/hardware DIY photobooth made with a Raspberry Pi,
+              Python and some electronic components.
+              Tools used for project and test: Python3,
+              soldering iron, Raspberry Pi3. <br>
+              <a href="http://github.com/leobel96/LambdaBooth">
+                <img class="github" src="img/GitHub_Logo.png" alt="Github">
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-title">
-            Neural network node
-          </div>
-          <div class="paragraph">
-            Group project for the exam "Elettronica dei Sistemi Digitali":
-            Hardware implementation of a neural network node.
-            Tools used for project and test: ModelSim Altera 10.1d,
-            Intel Quartus II 13.0, VHDL, Matlab, Excel. <br>
-            <a href="http://github.com/leobel96/Polito-ESD-NeuralNetwork">
-              <img class="github" src="img/GitHub_Logo.png" alt="Github">
-            </a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-title">
-            LambdaBooth
-          </div>
-          <div class="paragraph">
-            A software/hardware DIY photobooth made with a Raspberry Pi,
-            Python and some electronic components.
-            Tools used for project and test: Python3,
-            soldering iron, Raspberry Pi3. <br>
-            <a href="http://github.com/leobel96/LambdaBooth">
-              <img class="github" src="img/GitHub_Logo.png" alt="Github">
-            </a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-title">
-            Wheel!
-          </div>
-          <div class="paragraph">
-            A software/hardware DIY multipurpose USB roller. Inspired
-            by Microsoft Surface Dial.
-            Tools used for project and test: C++, AVR microcontroller.
-            Work in progress.
+          <div class="card">
+            <div class="card-title">
+              Wheel!
+            </div>
+            <div class="paragraph">
+              A software/hardware DIY multipurpose USB roller. Inspired
+              by Microsoft Surface Dial.
+              Tools used for project and test: C++, AVR microcontroller.
+              Work in progress.
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </template>
 
     <footer></footer>
 
